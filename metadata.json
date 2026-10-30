@@ -1,0 +1,6 @@
+{
+  "name": "BookNest – Modern Digital Book Reader",
+  "description": "An elegant, distraction-free digital book reader and personal bookshelf supporting EPUB, PDF, and TXT with realistic physical page flips.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

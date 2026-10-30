@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-serif: 'Lora', Georgia, Cambria, serif;
+    --font-display: 'Cormorant Garamond', Garamond, Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', Menlo, monospace;
+  }
+}
+
+/* 3D Page Flip Perspective & Realistic Book Depth */
+.book-perspective {
+  perspective: 2000px;
+  perspective-origin: center center;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(-180deg);
+}
+
+/* Page Curvature and Spine Shadow */
+.spine-shadow-left {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.02) 6%, transparent 18%);
+}
+
+.spine-shadow-right {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.02) 6%, transparent 18%);
+}
+
+.spine-center-crease {
+  box-shadow: inset 1px 0 3px rgba(0, 0, 0, 0.15), inset -1px 0 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Wooden Bookshelf Styling */
+.shelf-wood {
+  background: linear-gradient(to bottom, #d4a373 0%, #bc8a5f 45%, #a47148 55%, #8b5e34 100%);
+  box-shadow: 0 10px 20px -5px rgba(44, 24, 16, 0.35), inset 0 2px 2px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.shelf-wood-dark {
+  background: linear-gradient(to bottom, #3e3228 0%, #2e241c 45%, #241c16 55%, #1a140f 100%);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Realistic Book 3D Cover Shadow and Page Block */
+.book-card-3d {
+  transform: translateZ(0);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.book-card-3d:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 35px -8px rgba(0, 0, 0, 0.28), 0 8px 12px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Paper Grain Texture */
+.paper-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Reader Themes */
+.theme-light {
+  background-color: #faf9f6;
+  color: #1c1917;
+}
+
+.theme-sepia {
+  background-color: #f7f1e5;
+  color: #382c20;
+}
+
+.theme-night {
+  background-color: #1e222b;
+  color: #e2e8f0;
+}
+
+.theme-dark {
+  background-color: #0d0f12;
+  color: #f1f5f9;
+}
+
+/* Custom Scrollbar for TOC & Drawers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.5);
+}
